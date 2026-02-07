@@ -7,6 +7,8 @@ class Post:
     title: str
     url: str
     author: str
+    seeders: int
+    leechers: int
 
 @dataclass
 class SearchResponse:

@@ -60,12 +60,20 @@ def scrape_rutracker(query: str, max_pages: int = 2, delay: float = 0.1) -> Sear
                 
                 author_link = link.find_parent('tr').find('a', class_="med ts-text")
                 author = author_link.text.strip() if author_link else "Unknown"
+
+                seeders_link = link.find_parent('tr').find('b', class_="seedmed")
+                seeders = seeders_link.text.strip() if seeders_link else "Unknown"
+
+                leechers_link = link.find_parent('tr').find('td', class_="row4 leechmed bold")
+                leechers = leechers_link.text.strip() if leechers_link else "Unknown"
                 
                 posts.append(Post(
                     id=len(posts) + 1,
                     title=title,
                     url=url,
-                    author=author
+                    author=author,
+                    seeders=seeders,
+                    leechers=leechers
                 ))
             
             time.sleep(delay)
