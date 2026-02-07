@@ -19,12 +19,14 @@ def search_old(search_term):
             id=i,
             title="Please update SoftwareManager (API Changes)",
             url="",
-            author="Update"
+            author="Update",
+            seeders=-1,
+            leechers=-1
         )
         for i in range(1, 101)
     ]
     response = SearchResponse(success=True, query="UPDATE", data=posts, count=100)
-    return jsonify(response.to_dict()), 400
+    return jsonify(response.to_dict()), 200
 
 @app.route('/search')
 def search():
@@ -53,14 +55,10 @@ def search():
         err = SearchResponse(success=False, query=search_term, data=[], count=0)
         return jsonify(err.to_dict()), 502
 
-@app.route("/search")
-def search_empty():
-    err = SearchResponse(success=False, query="", data=[], count=0)
-    return jsonify(err.to_dict()), 400
 
 @app.route("/ping")
 def upping():
     return jsonify({"message": "pong"}), 200
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=port)
+    app.run(host='0.0.0.0', port=port, debug=True)
