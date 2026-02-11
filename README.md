@@ -1,4 +1,17 @@
-# HOW TO OBTAIN & SET YOUR RUTRACKER SESSION COOKIE
+# SoftwareManager-Server
+SoftwareManager-Server is a part of the backend for [SoftwareManager](https://github.com/KeksPirates/SoftwareManager).
+This is a lightweight API that serves the purpose of being able to search Rutracker without having to login yourself, simplifying usage for SoftwareManager.
+
+## API Docs
+API Docs can be found at https://michijackson.xyz/api
+
+---
+
+
+# Selfhosting
+
+
+## How to obtain & set your Rutracker session cookie
 
 1. Go to [rutracker.org](https://rutracker.org) and log in to your account.
 2. Open your browser's Developer Tools (usually by pressing `F12` or `Ctrl+Shift+I`).
@@ -15,7 +28,7 @@
 
 Your session cookie is now set up for use with the Server.
 
-# Server Setup Recommendations
+## Server Setup Recommendations
 
 On our VPS, we use Gunicorn to run our Flask server, with Nginx as a reverse proxy. If you want to run the server just for yourself, this isn't needed. You can simply run it directly with Flask:
 
