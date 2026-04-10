@@ -3,7 +3,7 @@ SoftwareManager-Server is a part of the backend for [SoftwareManager](https://gi
 This is a lightweight API that serves the purpose of being able to search Rutracker without having to login yourself, simplifying usage for SoftwareManager.
 
 ## API Docs
-API Docs can be found at https://michijackson.xyz/api
+API Docs can be found at https://softwaremanager.xyz/api
 
 ---
 
